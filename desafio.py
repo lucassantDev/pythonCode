@@ -1,17 +1,16 @@
 import random 
+import time
+
 numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print("Adivinhe o número de 1 a 10")
-print("-"*32)
 maquina = (random.choice(numero))
-jogador = input('Informe um número de um a dez: ')
+jogador = int(input('Informe um número de 1 a 10: '))
 print(jogador)
 while jogador != maquina:
-    print('Você errou :/')
-    print("Tente novamente: ")
-    jogador = input('Informe um número de um a dez: ')
-    if jogador == maquina:
-        print('Você acertou!')
-        break
-    else:
-        continue
-    break
+    print('Você errou! Tente novamente')
+    jogador = int(input('Informe um número de 1 a 10: '))
+    continue
+if jogador == maquina:
+    print('Parabéns!! Você acertou o número escolhido')
+    time.sleep(2)
+    print('Finalizando o programa...')
+    time.sleep(4)
