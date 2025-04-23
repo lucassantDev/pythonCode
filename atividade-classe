@@ -1,0 +1,91 @@
+# Atividade de classe da faculdade
+
+# 1 - Peça ao usuário que digite o nome e a idade, e imprima uma mensagem com os dois dados.
+nome = str(input('Informe seu primeiro nome: '))
+idade = int(input('Digite sua idade: '))
+print(f'Olá {nome}, você tem {idade} anos de idade!')
+
+# 2 - Crie duas listas: uma para armazenar nomes e outra para armazenar idades. Peça ao usuário que insira o nome e a idade de duas pessoas e armazene nas listas.
+nomes = []
+idades = []
+
+# Primeiro nome e idade
+primeiroNome = str(input('Primeiro nome: '))
+primeiraIdade = int(input('Informe a primeira idade: '))
+nomes.append(primeiroNome)
+idades.append(primeiraIdade)
+
+# Segundo nome e idade
+segundoNome = str(input('Segundo nome: '))
+segundaIdade = int(input('Informe a segunda idade: '))
+nomes.append(segundoNome)
+idades.append(segundaIdade)
+
+# Exibindo as informações adicionadas nas listas
+print(nomes)
+print(idades)
+
+# 3 - Adapte a Atividade 2 para pedir os dados de 3 pessoas usando um laço for.
+nomes = []
+idades = []
+
+# For para adicionar 3 pessoas
+for pessoas in range(3):
+  nome = str(input(f'Informe o {pessoas+1}º nome: '))
+  nomes.append(nome)
+  idade = int(input(f'Informe a idade da {pessoas+1}º pessoa: '))
+  idades.append(idade)
+
+# Exibindo as informações adicionadas nas listas
+print(nomes)
+print(idades)
+
+# 4 - Com base na lista de idades da Atividade 3, use uma estrutura if para dizer se cada pessoa é maior ou menor de idade.]
+nomes = []
+idades = []
+
+# Inicio do laço
+for pessoas in range(3):
+  nome = str(input(f'Informe o {pessoas+1}º nome: '))
+  nomes.append(nome)
+  idade = int(input(f'Informe a idade da {pessoas+1}º pessoa: '))
+  idades.append(idade)
+  if idade >= 18:
+    print(f'{nome} é MAIOR de idade')
+    print('-'*15)
+  else:
+    print(f'{nome} é MENOR de idade')
+    print('-'*15)
+
+# Exibindo as informações adicionadas nas listas
+print(nomes)
+print(idades)
+
+# Desafio final 5 - Crie um programa em Python que:
+
+#Peça o nome e a idade de 3 pessoas.
+
+#Armazene os dados em listas.
+
+#Após a coleta, o programa deve:
+
+#Imprimir o nome e a idade de cada pessoa.
+#Usar if para dizer se a pessoa é maior de idade (idade ≥ 18) ou menor de idade.
+
+# Listas
+nomes = []
+idades = []
+# Laço
+for pessoasInformadas in range(3):
+  nomeInformado = str(input(f'Informe o {pessoasInformadas+1}º nome: '))
+  nomes.append(nomeInformado)
+  idadeInformada = int(input(f'Informe a idade de {nomeInformado}: '))
+  print('---'*25)
+  idades.append(idadeInformada)
+
+# Exibindo dados
+for primeiraLista, segundaLista in zip(nomes, idades):
+  if segundaLista >= 18:
+    print(f'{primeiraLista} tem {segundaLista} anos e é MAIOR de idade')
+  else:
+    print(f'{primeiraLista} tem {segundaLista} anos e é MENOR de idade')
