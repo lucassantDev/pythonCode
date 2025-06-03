@@ -1,0 +1,162 @@
+# Atividade 2 envolvendo python. Todas as atividades foram desenvolvidas no google colab
+
+# 1- Peça ao usuário o nome, idade e nota de um aluno e armazene em um dicionário. Depois, imprima o conteúdo desse dicionário.
+
+# Dicionário
+informacaoAluno = {}
+
+# Atribuições do dicionário
+informacaoAluno['Nome'] = str(input('Informe o primeiro nome do(a) estudante: '))
+informacaoAluno['Idade'] = int(input('Informe a idade do(a) estudante: '))
+informacaoAluno['Nota'] = float(input('Informe a nota do(a) estudante: '))
+
+# Exibindo informações
+print(informacaoAluno)
+
+
+# 2 - Crie uma lista e adicione manualmente dois dicionários representando alunos diferentes.
+
+listaDeAlunos = []
+primeiroAluno = {}
+segundoAluno = {}
+
+primeiroAluno['Nome'] = str(input('Informe o nome do(a) primeiro(a) aluno(a): '))
+primeiroAluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+primeiroAluno['Nota'] = float(input('Nota: '))
+
+print('='*30)
+
+segundoAluno['Nome'] = str(input('Informe o nome do(a) segundo(a) aluno(a): '))
+segundoAluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+segundoAluno['Nota'] = float(input('Nota: '))
+
+listaDeAlunos.append(primeiroAluno)
+listaDeAlunos.append(segundoAluno)
+print(listaDeAlunos)
+
+
+# 3 - Percorra a lista criada na atividade anterior e exiba nome, idade e nota de cada aluno.
+
+listaDeAlunos = []
+primeiroAluno = {}
+segundoAluno = {}
+
+primeiroAluno['Nome'] = str(input('Informe o nome do(a) primeiro(a) aluno(a): '))
+primeiroAluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+primeiroAluno['Nota'] = float(input('Nota: '))
+
+print('='*30)
+
+segundoAluno['Nome'] = str(input('Informe o nome do(a) segundo(a) aluno(a): '))
+segundoAluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+segundoAluno['Nota'] = float(input('Nota: '))
+
+print('='*30)
+
+listaDeAlunos.append(primeiroAluno)
+listaDeAlunos.append(segundoAluno)
+print(listaDeAlunos)
+
+for alunos in listaDeAlunos:
+  print(f"O(A) aluno(a) {alunos['Nome']} tem {alunos['Idade']} anos de idade e tirou {alunos['Nota']} na avaliação!")
+
+
+# 4 -Use uma estrutura if para exibir se cada aluno da sua lista está aprovado ou reprovado.
+
+listaDeAlunos = []
+primeiroAluno = {}
+segundoAluno = {}
+
+primeiroAluno['Nome'] = str(input('Informe o nome do(a) primeiro(a) aluno(a): '))
+primeiroAluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+primeiroAluno['Nota'] = float(input('Nota: '))
+
+print('='*30)
+
+segundoAluno['Nome'] = str(input('Informe o nome do(a) segundo(a) aluno(a): '))
+segundoAluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+segundoAluno['Nota'] = float(input('Nota: '))
+
+print('='*30)
+
+listaDeAlunos.append(primeiroAluno)
+listaDeAlunos.append(segundoAluno)
+print(listaDeAlunos)
+print('-'*20)
+
+for alunos in listaDeAlunos:
+  print(f"O(A) aluno(a) {alunos['Nome']} tem {alunos['Idade']} anos de idade e tirou {alunos['Nota']} na avaliação.")
+  if alunos['Nota'] >= 7.0:
+    print(f"{alunos['Nome']} está aprovado!!")
+    print('-'*20)
+  else:
+    print(f"{alunos['Nome']} está reprovado.")
+    print('-'*20)
+
+
+# 5 - Crie um loop que continue pedindo os dados dos alunos e os adicionando na lista até que o usuário digite "sair".
+
+listaDeAlunos = []
+Aluno = {}
+
+while True:
+  Aluno['Nome'] = str(input('Informe o nome do(a) primeiro(a) aluno(a): '))
+  Aluno['Idade'] = int(input('Informe a idade referente ao aluno informado: '))
+  Aluno['Nota'] = float(input('Nota: '))
+  listaDeAlunos.append(Aluno.copy())
+  resposta = int(input('Deseja continuar? 1- sim  2- não '))
+  if resposta == 1:
+    continue
+  else:
+    break
+
+print('='*30)
+print(listaDeAlunos)
+print('='*30)
+
+
+# Desafio final
+#Crie um pequeno programa em Python que:
+
+#Use entrada (input) e variáveis para cadastrar o nome, idade e nota dos alunos.
+#Armazene os dados em uma lista de dicionários.
+#Calcule a média das notas.
+#Use condicional para indicar se o aluno está aprovado (nota ≥ 7) ou reprovado.
+#Use um laço for para percorrer os alunos e imprimir as informações.
+#O programa deve continuar rodando enquanto o usuário quiser (usando while).
+#Tente resolver com base no que você construiu até aqui!
+
+
+listaDeAlunos = []
+mediaAlunos = []
+Aluno = {}
+media = 0
+print('-'*30)
+while True:
+ Aluno['Nome'] = str(input("Informe o aluno: "))
+ Aluno['Idade'] = int(input('Informe a idade do aluno: '))
+ Aluno['Nota'] = float(input('Por último, informe sua nota: '))
+ media += Aluno['Nota']
+ listaDeAlunos.append(Aluno.copy())
+ resposta = int(input('Deseja continuar cadastrando alunos?  1-sim  |  2-não: '))
+ print('-'*30)
+ if resposta == 1:
+  continue
+ else:
+  print('finalizando o programa de cadastro...')
+  print('-'*30)
+  break
+
+#exibindo a média das notas
+print(f'A média de notas dos aluno foi de {media}')
+print('-'*30)
+
+for alunos in listaDeAlunos:
+  if alunos['Nota'] >= 7.0:
+    print(f"{alunos['Nome']} tem {alunos['Idade']} anos de idade e tirou {alunos['Nota']} na avaliação e está aprovado!!")
+    print('-'*30)
+  else:
+    print(f"{alunos['Nome']} tem {alunos['Idade']} anos de idade e tirou {alunos['Nota']} na avaliação e não tem nota sufuciente para passar!!")
+    print('-'*30)
+
+
